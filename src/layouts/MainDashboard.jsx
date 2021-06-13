@@ -9,10 +9,10 @@ export default function MainDashboard() {
         <div>
             <Grid>
                 <GridRow>
-                    <GridColumn width={4}>
+                    <GridColumn width={2}>
                         <SideBar/>
                     </GridColumn>
-                    <GridColumn>
+                    <GridColumn width={14}>
                         <Section/>
                     </GridColumn>
                 </GridRow>

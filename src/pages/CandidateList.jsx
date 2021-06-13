@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Icon, Menu, Table } from 'semantic-ui-react'
+import {Table,Card } from 'semantic-ui-react'
 import CandidateService from '../services/CandidateService'
 
 export default function CandidateList() {
@@ -14,13 +14,15 @@ export default function CandidateList() {
         
     return (
         <div>
+            <Card fluid color='grey' header='İş Arayanlar' />
+            <table class="ui red table">
             <Table celled>
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>Ad</Table.HeaderCell>
                         <Table.HeaderCell>Soyad</Table.HeaderCell>
                         <Table.HeaderCell>Tc Kimlik</Table.HeaderCell>
-                        <Table.HeaderCell>BirthDate</Table.HeaderCell>
+                        <Table.HeaderCell>Doğum Yılı</Table.HeaderCell>
                         <Table.HeaderCell>Email</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
@@ -39,26 +41,7 @@ export default function CandidateList() {
                     }
 
                 </Table.Body>
-
-                <Table.Footer>
-                    <Table.Row>
-                        <Table.HeaderCell colSpan='3'>
-                            <Menu floated='right' pagination>
-                                <Menu.Item as='a' icon>
-                                    <Icon name='chevron left' />
-                                </Menu.Item>
-                                <Menu.Item as='a'>1</Menu.Item>
-                                <Menu.Item as='a'>2</Menu.Item>
-                                <Menu.Item as='a'>3</Menu.Item>
-                                <Menu.Item as='a'>4</Menu.Item>
-                                <Menu.Item as='a' icon>
-                                    <Icon name='chevron right' />
-                                </Menu.Item>
-                            </Menu>
-                        </Table.HeaderCell>
-                    </Table.Row>
-                </Table.Footer>
-            </Table>
+            </Table></table>
         </div>
     )
 }

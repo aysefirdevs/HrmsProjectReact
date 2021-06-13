@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import EmployerService from '../services/EmployerService'
-import { Icon, Menu, Table } from 'semantic-ui-react'
+import {Table,Card } from 'semantic-ui-react'
 
 export default function EmployerList() {
 
@@ -12,7 +12,8 @@ export default function EmployerList() {
     },[])
 
     return (
-        <div>
+        <div><Card fluid color='grey' header='İş Verenler' />
+            <table class="ui red table">
             <Table celled>
                 <Table.Header>
                     <Table.Row>
@@ -36,26 +37,7 @@ export default function EmployerList() {
                     }
 
                 </Table.Body>
-
-                <Table.Footer>
-                    <Table.Row>
-                        <Table.HeaderCell colSpan='3'>
-                            <Menu floated='right' pagination>
-                                <Menu.Item as='a' icon>
-                                    <Icon name='chevron left' />
-                                </Menu.Item>
-                                <Menu.Item as='a'>1</Menu.Item>
-                                <Menu.Item as='a'>2</Menu.Item>
-                                <Menu.Item as='a'>3</Menu.Item>
-                                <Menu.Item as='a'>4</Menu.Item>
-                                <Menu.Item as='a' icon>
-                                    <Icon name='chevron right' />
-                                </Menu.Item>
-                            </Menu>
-                        </Table.HeaderCell>
-                    </Table.Row>
-                </Table.Footer>
-            </Table>
+            </Table></table>
         </div>
     )
 }
