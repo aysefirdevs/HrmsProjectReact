@@ -1,38 +1,43 @@
 import React from 'react'
-import {Container, Menu ,Header,Button} from 'semantic-ui-react'
+import { Link} from 'react-router-dom'
+import {Container, Menu ,Button} from 'semantic-ui-react'
 
 export default function Navi() {
     return (
         <div>
             <Menu fixed="top">
                 <Container>
-                    <Menu.Header>
-                    <Header as='h2' disabled attached="bottom" color="violet" textAlign="center">
-                        HRMS
-                    </Header>
-                    </Menu.Header>
+                    <Menu.Menu position="left">
+                    <Menu.Item>
+                        <div class="ui buttons">
+                            <Button color='yellow' as={Link} to={"/"}>HRMS</Button>
+                        </div>
+                    </Menu.Item>
+                    </Menu.Menu>
                     
                     <Menu.Menu position='right'>
                     <Menu.Item>
-                        <div class="ui bottoms">
-                            <Button color='pink' disabled>İlan Ver</Button>
+                        <div class="ui buttons">
+                            <Button color='pink'as={Link} to={"/jobAdvertisementAdd"}>
+                                İlan Ver 
+                            </Button>
                         </div>
                     </Menu.Item>
                     <Menu.Item>
-                        <div class="ui bottoms">
-                            <Button color='teal' disabled>İş Ara</Button>
+                        <div class="ui buttons">
+                            <Button color='teal' as={Link} to={"/jobAdvertisements"}>İş Ara</Button>
                         </div>
                     </Menu.Item>
                     <Menu.Item>
-                        <div class="ui bottoms">
+                        <div class="ui buttons">
                             <Button color='violet' disabled>Özgeçmiş Oluştur</Button>
                         </div>
                     </Menu.Item>
                     <Menu.Item>
                         <div class="ui buttons">
-                            <Button color="yellow">Sign Up</Button>
+                            <Button color="yellow" as={Link} to={"/register"}>Kayıt Ol</Button>
                             <div class="or"></div>
-                            <Button color="green">Sign In</Button>
+                            <Button color="green" as={Link} to={"/login"}>Giriş Yap</Button>
                         </div>
                     </Menu.Item>
                     </Menu.Menu>
